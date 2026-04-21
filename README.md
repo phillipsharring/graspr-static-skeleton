@@ -2,7 +2,7 @@
 
 ![Graspr](graspr.png)
 
-Starter project for building static sites with [`@phillipsharring/graspr-build`](https://github.com/phillipsharring/graspr-build) — an HTML custom-tag compiler, page baker, and Vite dev plugin. No runtime framework, no HTMX, no client-side state. Just layouts, components, pages, and Tailwind.
+Starter project for building static sites with [`@phillipsharring/graspr-build`](https://github.com/phillipsharring/graspr-build)  - an HTML custom-tag compiler, page baker, and Vite dev plugin. No runtime framework, no HTMX, no client-side state. Just layouts, components, pages, and Tailwind.
 
 For a full app with HTMX, auth, modals, and toasts, use the [Graspr App Skeleton](https://github.com/phillipsharring/graspr-app-skeleton) instead.
 
@@ -26,7 +26,7 @@ Your site is running at `http://localhost:5173`.
 
 ```
 src/
-  app.js              Vite entry — imports CSS
+  app.js              Vite entry  - imports CSS
   styles/
     style.css         Tailwind + custom theme + app styles
 content/
@@ -38,7 +38,7 @@ content/
   components/
     callout.html      Example custom-tag component
 public/               Static assets (favicon, images, robots.txt)
-site.config.js        Site name, URL, copyright — injected into layouts
+site.config.js        Site name, URL, copyright  - injected into layouts
 vite.config.js        Vite + graspr-build + Tailwind plugins
 ```
 
@@ -74,7 +74,7 @@ Every page declares its layout in a self-closing tag at the top, then the page b
 
 ### Abstract URLs
 
-Pages live in `content/pages/` as plain `.html` files and compile to `dist/<route>/index.html`. For extensionless URLs (`/about` instead of `/about/`), add a post-build step that flattens the tree — see `phillipharrington.com` for a working example using `scripts/flatten-dist.mjs`.
+Pages live in `content/pages/` as plain `.html` files and compile to `dist/<route>/index.html`. For extensionless URLs (`/about` instead of `/about/`), add a post-build step that flattens the tree  - see `phillipharrington.com` for a working example using `scripts/flatten-dist.mjs`.
 
 ## Components
 
@@ -98,12 +98,12 @@ Use them in pages:
 
 ### Interpolation syntax
 
-- `[[prop]]` — HTML-escaped prop
-- `[[{prop}]]` — raw prop (for attribute values, HTML snippets)
-- `[[slot]]` — child content passed between the component's tags
-- `[[#if flag]] ... [[else]] ... [[/if]]` — conditional on a prop's truthiness
+- `[[prop]]`  - HTML-escaped prop
+- `[[{prop}]]`  - raw prop (for attribute values, HTML snippets)
+- `[[slot]]`  - child content passed between the component's tags
+- `[[#if flag]] ... [[else]] ... [[/if]]`  - conditional on a prop's truthiness
 
-Custom tags can be single-word (`<callout>` — works as long as `callout.html` exists in `content/components/`) or HTML custom-element style (`<my-callout>` — must contain a hyphen).
+Custom tags can be single-word (`<callout>`  - works as long as `callout.html` exists in `content/components/`) or HTML custom-element style (`<my-callout>`  - must contain a hyphen).
 
 ## Customization
 
@@ -123,7 +123,7 @@ Reference them in layouts and pages as `[[siteName]]`, `[[siteUrl]]`, `[[copyrig
 
 ### Adding JavaScript
 
-For small amounts of interactivity (hamburger menus, theme toggles, scroll effects), add it directly to `src/app.js`. The skeleton has no runtime framework to fight with — everything is a plain vanilla script and imports nothing unless you ask.
+For small amounts of interactivity (hamburger menus, theme toggles, scroll effects), add it directly to `src/app.js`. The skeleton has no runtime framework to fight with  - everything is a plain vanilla script and imports nothing unless you ask.
 
 For anything larger (HTMX requests, auth-gated widgets, modal state), you probably want the [Graspr App Skeleton](https://github.com/phillipsharring/graspr-app-skeleton) instead, which bundles `@phillipsharring/graspr-framework` on top of graspr-build.
 
@@ -131,7 +131,7 @@ For anything larger (HTMX requests, auth-gated widgets, modal state), you probab
 
 The build system (`@phillipsharring/graspr-build`) provides:
 
-- Custom HTML tag expansion — author pages with `<callout>`, `<heading h2>`, `<card>`, whatever you define
+- Custom HTML tag expansion  - author pages with `<callout>`, `<heading h2>`, `<card>`, whatever you define
 - Layout system with `[[app]]` slot and `<page-head>` injection
 - `[[prop]]` / `[[{raw}]]` / `[[#if]]` / `[[slot]]` interpolation
 - File-based page routing (`content/pages/about.html` → `/about`)
